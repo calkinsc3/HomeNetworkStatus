@@ -14,6 +14,9 @@
 		94F49E1224599ADC00DF9F9D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 94F49E1124599ADC00DF9F9D /* Preview Assets.xcassets */; };
 		94F49E1524599ADC00DF9F9D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F49E1324599ADC00DF9F9D /* LaunchScreen.storyboard */; };
 		94F49E2024599ADC00DF9F9D /* HomeNetworkStatusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F49E1F24599ADC00DF9F9D /* HomeNetworkStatusTests.swift */; };
+		94F49E2B24599B0100DF9F9D /* NetworkStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F49E2A24599B0100DF9F9D /* NetworkStatusModel.swift */; };
+		94F49E2D24599B8F00DF9F9D /* NetworkStatusMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F49E2C24599B8F00DF9F9D /* NetworkStatusMock.json */; };
+		94F49E2F24599C7100DF9F9D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F49E2E24599C7100DF9F9D /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +41,9 @@
 		94F49E1B24599ADC00DF9F9D /* HomeNetworkStatusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HomeNetworkStatusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		94F49E1F24599ADC00DF9F9D /* HomeNetworkStatusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkStatusTests.swift; sourceTree = "<group>"; };
 		94F49E2124599ADC00DF9F9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		94F49E2A24599B0100DF9F9D /* NetworkStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusModel.swift; sourceTree = "<group>"; };
+		94F49E2C24599B8F00DF9F9D /* NetworkStatusMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NetworkStatusMock.json; sourceTree = "<group>"; };
+		94F49E2E24599C7100DF9F9D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 				94F49E0824599ADA00DF9F9D /* AppDelegate.swift */,
 				94F49E0A24599ADA00DF9F9D /* SceneDelegate.swift */,
 				94F49E0C24599ADA00DF9F9D /* ContentView.swift */,
+				94F49E2E24599C7100DF9F9D /* Extensions.swift */,
+				94F49E2A24599B0100DF9F9D /* NetworkStatusModel.swift */,
 				94F49E0E24599ADC00DF9F9D /* Assets.xcassets */,
 				94F49E1324599ADC00DF9F9D /* LaunchScreen.storyboard */,
 				94F49E1624599ADC00DF9F9D /* Info.plist */,
@@ -103,6 +111,7 @@
 			children = (
 				94F49E1F24599ADC00DF9F9D /* HomeNetworkStatusTests.swift */,
 				94F49E2124599ADC00DF9F9D /* Info.plist */,
+				94F49E2C24599B8F00DF9F9D /* NetworkStatusMock.json */,
 			);
 			path = HomeNetworkStatusTests;
 			sourceTree = "<group>";
@@ -198,6 +207,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F49E2D24599B8F00DF9F9D /* NetworkStatusMock.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +218,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F49E2F24599C7100DF9F9D /* Extensions.swift in Sources */,
 				94F49E0924599ADA00DF9F9D /* AppDelegate.swift in Sources */,
 				94F49E0B24599ADA00DF9F9D /* SceneDelegate.swift in Sources */,
+				94F49E2B24599B0100DF9F9D /* NetworkStatusModel.swift in Sources */,
 				94F49E0D24599ADA00DF9F9D /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

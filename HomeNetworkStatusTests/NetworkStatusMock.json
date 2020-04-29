@@ -1,0 +1,42 @@
+{
+   "setupState": "GWIFI_OOBE_COMPLETE",
+   "software": {
+      "blockingUpdate": 1,
+      "softwareVersion": "12371.71.11",
+      "updateChannel": "stable-channel",
+      "updateNewVersion": "0.0.0.0",
+      "updateProgress": 0.0,
+      "updateRequired": false,
+      "updateStatus": "idle"
+   },
+   "system": {
+      "countryCode": "us",
+      "groupRole": "root",
+      "hardwareId": "MISTRAL D2B-A2A-A3R-I5P",
+      "lan0Link": true,
+      "modelId": "MISTRAL",
+      "uptime": 68036
+   },
+   "vorlonInfo": {
+      "migrationMode": "voobed"
+   },
+   "wan": {
+      "captivePortal": false,
+      "ethernetLink": true,
+      "gatewayIpAddress": "47.34.56.1",
+      "invalidCredentials": false,
+      "ipAddress": true,
+      "ipMethod": "dhcp",
+      "ipPrefixLength": 21,
+      "leaseDurationSeconds": 28800,
+      "localIpAddress": "47.34.57.92",
+      "nameServers": [
+         "8.8.8.8",
+         "8.8.4.4",
+         "71.10.216.1",
+         "71.10.216.2"
+      ],
+      "online": true,
+      "pppoeDetected": false
+   }
+}

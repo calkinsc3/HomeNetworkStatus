@@ -19,16 +19,63 @@ class HomeNetworkStatusTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testNetworkStatusModel() throws {
+        
+        let networkStatus = self.getMockData(forResource: "NetworkStatusMock")
+        
+        if let givenNetworkStatusModel = networkStatus {
+            
+            do {
+                let jsonDecoder = JSONDecoder()
+                let networkModel = try jsonDecoder.decode(NetworkStatusModel.self, from: givenNetworkStatusModel)
+                
+                XCTAssert(networkModel.setupState == "GWIFI_OOBE_COMPLETE" , "The setupState should be GWIFI_OOBE_COMPLETE" )
+                XCTAssert(networkModel.software.softwareVersion == "12371.71.11", "The softwareVersion should be 12371.71.11")
+                XCTAssert(networkModel.system.modelID == "MISTRAL", "The model ID should be MISTRAL")
+                
+                //WAN data
+                XCTAssert(networkModel.wan.ipAddress, "IP Address should be true")
+                XCTAssert(networkModel.wan.localIPAddress == "47.34.57.92", "Local IP Address should be 47.34.57.92")
+                
+                
+            } catch let error {
+                XCTFail("Could not decode NetworkStatusModel: \(error)")
+            }
+        } else {
+            XCTFail("Cannot unwrap the HomeNetworkStatusTest mock")
         }
+        
+    }
+    
+    //MARK:- Helper Functions
+    private func createPath(forJSONFile: String) -> URL {
+        
+        let jsonURL = URL(
+            fileURLWithPath: forJSONFile,
+            relativeTo: FileManager.documentDirectoryURL?.appendingPathComponent("\(forJSONFile)")
+        ).appendingPathExtension("json")
+        
+        print("json path for \(forJSONFile) = \(jsonURL.absoluteString)")
+        
+        return jsonURL
+    }
+    
+    private func getMockData(forResource: String) -> Data? {
+        
+        //This is included in they myamfam target becasue it will be used the app.
+        let currentBundle = Bundle(for: type(of: self))
+        if let pathForRecommendationMock = currentBundle.url(forResource: forResource, withExtension: "json") {
+            do {
+                return try Data(contentsOf: pathForRecommendationMock)
+            } catch {
+                XCTFail("Unable to convert \(pathForRecommendationMock) to Data.")
+                return nil
+            }
+        } else {
+            XCTFail("Unable to load \(forResource).json.")
+            return nil
+        }
+        
     }
 
 }
