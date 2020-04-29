@@ -85,14 +85,11 @@
 		94F49E0724599ADA00DF9F9D /* HomeNetworkStatus */ = {
 			isa = PBXGroup;
 			children = (
-				94F49E0824599ADA00DF9F9D /* AppDelegate.swift */,
-				94F49E0A24599ADA00DF9F9D /* SceneDelegate.swift */,
-				94F49E0C24599ADA00DF9F9D /* ContentView.swift */,
-				94F49E2E24599C7100DF9F9D /* Extensions.swift */,
-				94F49E2A24599B0100DF9F9D /* NetworkStatusModel.swift */,
-				94F49E0E24599ADC00DF9F9D /* Assets.xcassets */,
-				94F49E1324599ADC00DF9F9D /* LaunchScreen.storyboard */,
-				94F49E1624599ADC00DF9F9D /* Info.plist */,
+				94F49E302459A1C800DF9F9D /* System */,
+				94F49E312459A1D400DF9F9D /* UI */,
+				94F49E332459A1F600DF9F9D /* Utils */,
+				94F49E342459A1FF00DF9F9D /* Models */,
+				94F49E322459A1EA00DF9F9D /* Resources */,
 				94F49E1024599ADC00DF9F9D /* Preview Content */,
 			);
 			path = HomeNetworkStatus;
@@ -114,6 +111,49 @@
 				94F49E2C24599B8F00DF9F9D /* NetworkStatusMock.json */,
 			);
 			path = HomeNetworkStatusTests;
+			sourceTree = "<group>";
+		};
+		94F49E302459A1C800DF9F9D /* System */ = {
+			isa = PBXGroup;
+			children = (
+				94F49E0824599ADA00DF9F9D /* AppDelegate.swift */,
+				94F49E0A24599ADA00DF9F9D /* SceneDelegate.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		94F49E312459A1D400DF9F9D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				94F49E0C24599ADA00DF9F9D /* ContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		94F49E322459A1EA00DF9F9D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				94F49E0E24599ADC00DF9F9D /* Assets.xcassets */,
+				94F49E1324599ADC00DF9F9D /* LaunchScreen.storyboard */,
+				94F49E1624599ADC00DF9F9D /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		94F49E332459A1F600DF9F9D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				94F49E2E24599C7100DF9F9D /* Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		94F49E342459A1FF00DF9F9D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				94F49E2A24599B0100DF9F9D /* NetworkStatusModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
