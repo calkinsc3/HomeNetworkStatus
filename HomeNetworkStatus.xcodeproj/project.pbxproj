@@ -17,6 +17,7 @@
 		94F49E2B24599B0100DF9F9D /* NetworkStatusModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F49E2A24599B0100DF9F9D /* NetworkStatusModel.swift */; };
 		94F49E2D24599B8F00DF9F9D /* NetworkStatusMock.json in Resources */ = {isa = PBXBuildFile; fileRef = 94F49E2C24599B8F00DF9F9D /* NetworkStatusMock.json */; };
 		94F49E2F24599C7100DF9F9D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F49E2E24599C7100DF9F9D /* Extensions.swift */; };
+		94F49E362459A35800DF9F9D /* NetworkStatusFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F49E352459A35800DF9F9D /* NetworkStatusFetcher.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		94F49E2A24599B0100DF9F9D /* NetworkStatusModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusModel.swift; sourceTree = "<group>"; };
 		94F49E2C24599B8F00DF9F9D /* NetworkStatusMock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NetworkStatusMock.json; sourceTree = "<group>"; };
 		94F49E2E24599C7100DF9F9D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		94F49E352459A35800DF9F9D /* NetworkStatusFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkStatusFetcher.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +89,11 @@
 			children = (
 				94F49E302459A1C800DF9F9D /* System */,
 				94F49E312459A1D400DF9F9D /* UI */,
-				94F49E332459A1F600DF9F9D /* Utils */,
 				94F49E342459A1FF00DF9F9D /* Models */,
-				94F49E322459A1EA00DF9F9D /* Resources */,
+				94F49E372459A36400DF9F9D /* Fetchers */,
+				94F49E332459A1F600DF9F9D /* Utils */,
 				94F49E1024599ADC00DF9F9D /* Preview Content */,
+				94F49E322459A1EA00DF9F9D /* Resources */,
 			);
 			path = HomeNetworkStatus;
 			sourceTree = "<group>";
@@ -154,6 +157,14 @@
 				94F49E2A24599B0100DF9F9D /* NetworkStatusModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		94F49E372459A36400DF9F9D /* Fetchers */ = {
+			isa = PBXGroup;
+			children = (
+				94F49E352459A35800DF9F9D /* NetworkStatusFetcher.swift */,
+			);
+			path = Fetchers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94F49E362459A35800DF9F9D /* NetworkStatusFetcher.swift in Sources */,
 				94F49E2F24599C7100DF9F9D /* Extensions.swift in Sources */,
 				94F49E0924599ADA00DF9F9D /* AppDelegate.swift in Sources */,
 				94F49E0B24599ADA00DF9F9D /* SceneDelegate.swift in Sources */,
