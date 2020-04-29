@@ -418,7 +418,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HomeNetworkStatus/Preview Content\"";
 				DEVELOPMENT_TEAM = GAW47D4MAE;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HomeNetworkStatus/Info.plist;
+				INFOPLIST_FILE = HomeNetworkStatus/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -438,7 +438,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"HomeNetworkStatus/Preview Content\"";
 				DEVELOPMENT_TEAM = GAW47D4MAE;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = HomeNetworkStatus/Info.plist;
+				INFOPLIST_FILE = HomeNetworkStatus/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
