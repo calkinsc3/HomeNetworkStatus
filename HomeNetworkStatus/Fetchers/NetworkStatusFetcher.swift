@@ -77,7 +77,7 @@ extension NetworkFetcher : NetworkFetchable {
 private extension NetworkFetcher {
     
     struct NetworkServerAPI {
-        static let schema = "https"
+        static let schema = "http"
         static let host = "192.168.86.1"
         static let path = "/api/v1/status"
         
