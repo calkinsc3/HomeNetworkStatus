@@ -15,10 +15,6 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Nest Wifi Status")
-                    .font(.title)
-                Divider()
-                
                 List {
                     NavigationLink(destination: WANView(wanData: self.networkStatusViewModel.networkStatus.wan )) {
                         Text("WAN Info: \(self.networkStatusViewModel.networkStatus.wan.localIPAddress)")
@@ -32,9 +28,8 @@ struct ContentView: View {
                 }
                 
             }
+            .navigationBarTitle("Nest Wifi Status")
         }
-        .navigationBarTitle("Local Network Status")
-        
     }
 }
 
@@ -49,7 +44,11 @@ struct WANView: View {
             Text("Local IP: \(self.wanData.localIPAddress)")
             Text("Gateway Address: \(self.wanData.gatewayIPAddress)")
             Text("IP Lease Duration: \(self.wanData.leaseDurationSeconds)")
+            NavigationLink(destination: DNSServersView(nameServers: self.wanData.nameServers)) {
+                Text("Name Servers")
+            }
         }
+        .navigationBarTitle("WAN")
     }
 }
 
@@ -62,6 +61,7 @@ struct DNSServersView: View {
                 Text(nameServerIP)
             }
         }
+        .navigationBarTitle("Named Servers")
     }
 }
 
@@ -78,6 +78,7 @@ struct SystemView: View {
             Text("Model ID: \(self.systemData.modelID)")
             Text("Uptime: \(self.systemData.uptime)")
         }
+        .navigationBarTitle("System")
     }
 }
 
@@ -95,6 +96,7 @@ struct SoftwareView: View {
             Text("Update Required: \(self.softwareData.updateRequired ? "true" : "false")")
             Text("Update Status: \(self.softwareData.updateStatus)")
         }
+        .navigationBarTitle("Software")
     }
 }
 
@@ -102,6 +104,12 @@ struct SoftwareView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            ContentView()
+            WANView(wanData: WAN.placeholder)
+            SystemView(systemData: System.placeholder)
+            SoftwareView(softwareData: Software.placeholder)
+        }
+        
     }
 }
