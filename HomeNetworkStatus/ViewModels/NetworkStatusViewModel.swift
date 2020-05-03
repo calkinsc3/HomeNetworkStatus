@@ -15,7 +15,7 @@ import os
 //MARK:- NetworkStatus View Model
 class NetworkStatusViewModel: ObservableObject {
     
-    @Published var networkStatus: NetworkStatusModel?
+    @Published var networkStatus: NetworkStatusModel = NetworkStatusModel.placeholder
     
     
     private let networkStatusFetcher = NetworkFetcher()

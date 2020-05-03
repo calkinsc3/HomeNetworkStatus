@@ -15,23 +15,86 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("Staus of Local Network")
+                Text("Nest Wifi Status")
                     .font(.title)
                 Divider()
-                Text("Setup State: \(self.networkStatusViewModel.networkStatus?.setupState ?? "")")
-                Text("Local IP Connected: \(String(self.networkStatusViewModel.networkStatus?.wan.ipAddress ?? false))")
-                Text("Local IP: \(self.networkStatusViewModel.networkStatus?.wan.localIPAddress ?? "")")
-                Text("Gateway Address: \(self.networkStatusViewModel.networkStatus?.wan.gatewayIPAddress ?? "")")
-                Text("IP Lease Duration: \(self.networkStatusViewModel.networkStatus?.wan.leaseDurationSeconds ?? 0)")
                 
-                List(self.networkStatusViewModel.networkStatus?.wan.nameServers ?? [], id:\.self) { dns in
-                    Text("DNS Severs: \(dns)")
+                List {
+                    NavigationLink(destination: WANView(wanData: self.networkStatusViewModel.networkStatus.wan )) {
+                        Text("WAN Info: \(self.networkStatusViewModel.networkStatus.wan.localIPAddress)")
+                    }
+                    NavigationLink(destination: SystemView(systemData: self.networkStatusViewModel.networkStatus.system)) {
+                        Text("System Info: \(self.networkStatusViewModel.networkStatus.system.modelID)")
+                    }
+                    NavigationLink(destination: SoftwareView(softwareData: self.networkStatusViewModel.networkStatus.software)) {
+                        Text("Software Version: \(self.networkStatusViewModel.networkStatus.software.softwareVersion)")
+                    }
                 }
+                
             }
         }
         .navigationBarTitle("Local Network Status")
         
+    }
+}
+
+struct WANView: View {
+    
+    let wanData: WAN
+    
+    var body: some View {
         
+        VStack {
+            Text("Local IP Connected: \(String(self.wanData.ipAddress))")
+            Text("Local IP: \(self.wanData.localIPAddress)")
+            Text("Gateway Address: \(self.wanData.gatewayIPAddress)")
+            Text("IP Lease Duration: \(self.wanData.leaseDurationSeconds)")
+        }
+    }
+}
+
+struct DNSServersView: View {
+    let nameServers : [String]
+    
+    var body: some View {
+        VStack {
+            ForEach(self.nameServers, id: \.self) { nameServerIP in
+                Text(nameServerIP)
+            }
+        }
+    }
+}
+
+struct SystemView: View {
+    
+    let systemData: System
+    
+    var body: some View {
+        VStack {
+            Text("Country Code: \(self.systemData.countryCode)")
+            Text("Group Role: \(self.systemData.groupRole)")
+            Text("HardwardID: \(self.systemData.hardwareID)")
+            Text("Land is Linked: \(self.systemData.lan0Link ? "true" : "false"))")
+            Text("Model ID: \(self.systemData.modelID)")
+            Text("Uptime: \(self.systemData.uptime)")
+        }
+    }
+}
+
+struct SoftwareView: View {
+    
+    let softwareData: Software
+    
+    var body: some View {
+        VStack {
+            Text("Blocking Update: \(self.softwareData.blockingUpdate)")
+            Text("Software Version: \(self.softwareData.softwareVersion)")
+            Text("Update Channel: \(self.softwareData.updateChannel)")
+            Text("Update New Version: \(self.softwareData.updateNewVersion)")
+            Text("Update Progress: \(self.softwareData.updateProgress)")
+            Text("Update Required: \(self.softwareData.updateRequired ? "true" : "false")")
+            Text("Update Status: \(self.softwareData.updateStatus)")
+        }
     }
 }
 
